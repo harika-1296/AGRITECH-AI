@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #F8FAF5;
+    color: #102D20;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Sora', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-card border border-forest-50;
+  }
+  .card-cream {
+    @apply rounded-2xl bg-cream-50 shadow-card border border-forest-50;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-forest-600 px-5 py-3 font-semibold text-white shadow-card transition-all hover:bg-forest-700 hover:shadow-cardLg active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-semibold text-forest-700 border border-forest-100 shadow-sm transition-all hover:bg-forest-50 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-medium text-forest-700 transition-all hover:bg-forest-50 active:scale-[0.98];
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-forest-100 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 outline-none transition-all focus:border-forest-400 focus:ring-4 focus:ring-forest-100;
+  }
+  .label-field {
+    @apply block text-sm font-semibold text-forest-800 mb-1.5;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #B7D96A; border-radius: 9999px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #4C9B64; }
+  .text-balance { text-wrap: balance; }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(38,115,72,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(38,115,72,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgba(76,155,100,0.18) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+}
